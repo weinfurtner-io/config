@@ -1,0 +1,38 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        contact:
+          destination: contact
+          content-type: application/x-java-object;type=io.weinfurtner.email.message.ContactMessage
+
+cloud:
+  aws:
+    credentials:
+      accessKey: '{cipher}053153b416650250bc7cdeb0a6660c1cc88c5f59faf7d34bb5fd3cfe905fbd02ab95475a7d20755db778d02754f8e36d'
+      secretKey: '{cipher}485295112a39d290ef432b8d0e345b46c7cb24a38a54126b788e8e72deeff017f9036ab09ea27892089757ebfce5bf4e0bd948752f6d5c6f64412fbe70a0f2be'
+    region:
+      static: eu-west-1
+
+---
+
+spring:
+  profiles: development
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+---
+
+spring:
+  profiles: docker
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/

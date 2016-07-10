@@ -1,1 +1,1 @@
-config
+Configuration for weinfurtner.io

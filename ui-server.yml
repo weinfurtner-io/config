@@ -1,0 +1,35 @@
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  cloud:
+    stream:
+      bindings:
+        contact:
+          destination: contact
+          content-type: application/json
+
+---
+
+spring:
+  profiles: development
+  redis:
+    host: localhost
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+---
+
+spring:
+  profiles: docker
+  redis:
+    host: redis
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+

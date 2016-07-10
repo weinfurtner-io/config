@@ -1,0 +1,29 @@
+zuul:
+  routes:
+    ui-server:
+      path: /**
+      serviceId: ui-server
+
+
+server:
+  port: 80
+
+---
+
+spring:
+  profiles: development
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+---
+
+spring:
+  profiles: docker
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
