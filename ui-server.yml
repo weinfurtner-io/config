@@ -9,6 +9,11 @@ spring:
           destination: contact
           content-type: application/json
 
+security:
+  user:
+    name: '{cipher}95d9ba072a216bd973d5176d484973ad95e7fecfe95af8c230bd812b18170036'
+    password: '{cipher}4c154edb819856dbede326a70435a1bf95be4fe490e4e6c13ec7fd4f740ddabcaa25e87fb2f2b0215d3e9d3af58a2132'
+
 ---
 
 spring:

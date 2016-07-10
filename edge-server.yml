@@ -2,11 +2,15 @@ zuul:
   routes:
     ui-server:
       path: /**
+      sensitiveHeaders:
       serviceId: ui-server
 
 
 server:
   port: 80
+
+endpoints:
+  enabled: false
 
 ---
 
