@@ -31,7 +31,9 @@ eureka:
 
 spring:
   profiles: docker
-
+  rabbitmq:
+    host: rabbitmq
+    
 eureka:
   client:
     serviceUrl:
