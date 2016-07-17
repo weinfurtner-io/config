@@ -7,7 +7,7 @@ spring:
       bindings:
         contact:
           destination: contact
-          content-type: application/x-java-object;type=io.weinfurtner.email.message.ContactMessage
+          content-type: application/x-java-object;type=io.weinfurtner.email.event.ContactEvent
 
 cloud:
   aws:
@@ -16,6 +16,10 @@ cloud:
       secretKey: '{cipher}485295112a39d290ef432b8d0e345b46c7cb24a38a54126b788e8e72deeff017f9036ab09ea27892089757ebfce5bf4e0bd948752f6d5c6f64412fbe70a0f2be'
     region:
       static: eu-west-1
+
+application:
+  email:
+    from: j.weinfurtner+aws@gmail.com
 
 ---
 
